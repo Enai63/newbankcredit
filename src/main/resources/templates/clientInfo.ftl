@@ -14,7 +14,7 @@
     </button>
 </div>
 <div class="clientAdd">
-    <form method="post">
+    <form method="post" >
         <label>
             <input type="text" name="firstName" placeholder="Entry firstname client"/>
         </label>
@@ -44,11 +44,15 @@
     <div class="listClient">
     <#if clientsList??>
         <div class="clients">
+            <form method="post" action="deleteClientId">
+                <input type="hidden" name="_method" value="delete">
         <#list clientsList as client>
-            <h2>Id client ${client.id}</h2>
-            <h2>First name ${client.firstName}</h2>
-            <h2>Last name ${client.lastName}</h2>
-            <h2>Email ${client.email}</h2>
+            <h2>Id client ${client.id} First name ${client.firstName} Last name ${client.lastName} Email ${client.email}</h2>
+                <label>
+                    <input type="hidden" name="id" value="${client.id}"/>
+                </label>
+            <button type="submit">Delete</button>
+            </form>
         </#list>
         </div>
         <#else>

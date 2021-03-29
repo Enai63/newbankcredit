@@ -10,7 +10,7 @@
 <body>
     <h1>Welcome to bank</h1>
     <button>
-        <a href="index/client">Sign in bank</a>
+        <a href="index/clientInfo">Sign in bank</a>
     </button>
 </body>
 </html>
