@@ -7,20 +7,20 @@ import java.util.List;
 @Component
 public class ClientDAO {
     private List<Client> clients;
-    private Long ID_CLIENT = 1L;
+    private Long ID_CLIENT = 0L;
     {
         clients = new ArrayList<>();
 
 
         clients.add(new Client(++ID_CLIENT,"Petrov", "Anton", "Valentinovich",
                 4234213,
-                893242113, "wewd@mmdqd.ru"));
-        clients.add(new Client(++ID_CLIENT,"Ivanov", "Samu", "Iporr",
+                893242113, "Toha76@yandex.ru"));
+        clients.add(new Client(++ID_CLIENT,"Ivanov", "Ivan", "Viktorovich",
                 43525,
-                893243534, "wfgeve@mmdqd.ru"));
-        clients.add(new Client(++ID_CLIENT,"Fath", "Setrt", "Semrnwn",
+                893243534, "ivanov32@mail.ru"));
+        clients.add(new Client(++ID_CLIENT,"Kiselev", "Denis", "Andreevich",
                 41232113,
-                823442113, "dgfe@mmdqd.ru"));
+                823442113, "kisel42ya.ru"));
     }
 
     public List<Client> listClients() {

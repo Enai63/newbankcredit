@@ -9,7 +9,7 @@ import ru.haulmont.bankcredit.DAO.ClientDAO;
 
 
 @Controller
-@RequestMapping("/index/client")
+@RequestMapping("bank/clientinfo")
 public class ClientController {
     private final ClientDAO clientDAO;
 
@@ -20,12 +20,12 @@ public class ClientController {
     @GetMapping
     public String getClients(Model model) {
         model.addAttribute(clientDAO.listClients());
-        return "/client";
+        return "clientinfo/clientindex";
     }
 
     @GetMapping("/{id}")
     public String getClient(@PathVariable("id") Long id, Model model) {
         model.addAttribute(clientDAO.getOneClient(id));
-        return "/client";
+        return "clientinfo/clientindex";
     }
 }
