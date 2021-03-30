@@ -1,8 +1,6 @@
 <#import '../parts/common.ftl' as c>
     <@c.page>
-        <div class="info">
-            <h2>Client info</h2>
-        </div>
+        <h1 class="display-6 text-center">Client info</h1>
         <table class="table table-sm table-dark">
             <div class="table-responsive">
                 <table class="table table-bordered table-success">
