@@ -9,8 +9,12 @@
 </head>
 <body>
     <h1>Welcome to bank</h1>
-    <button>
-        <a href="index/clientInfo">Sign in bank</a>
+    <button type="submit" name="Client info">
+        <a href="index/clientInfo"></a>
+    </button>
+
+    <button type="submit" name="Client">
+        <a href="/index/client.ftl"></a>
     </button>
 </body>
 </html>
