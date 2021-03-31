@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.haulmont.bankcredit.DAO.ClientDAO;
 
 
@@ -19,13 +20,14 @@ public class ClientController {
 
     @GetMapping
     public String getClients(Model model) {
-        model.addAttribute(clientDAO.listClients());
+        model.addAttribute("clientList",clientDAO.listClients());
         return "clientinfo/clientindex";
     }
 
-    @GetMapping("/{id}")
-    public String getClient(@PathVariable("id") Long id, Model model) {
-        model.addAttribute(clientDAO.getOneClient(id));
+    @GetMapping("/id")
+    public String getClient(@RequestParam("id") Long id, Model model) {
+        System.out.println(id);
+        model.addAttribute("clientId", clientDAO.getOneClient(id));
         return "clientinfo/clientindex";
     }
 }
