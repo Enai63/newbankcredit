@@ -8,8 +8,11 @@
             <input type="number" name="id" class="form-control" placeholder="Entry id" aria-label="Entry id" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Entry id</button>
         </div>
+
     </form>
     </div>
+
+<#include "../parts/addClient.ftl"/>
 
     <#if clientId??>
         <div class="getClientId">

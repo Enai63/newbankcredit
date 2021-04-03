@@ -2,8 +2,9 @@
  <@c.page>
 <div class="main">
     <h2>Welcome to bank</h2>
-    <button class="mainbutton" onclick="location.href = 'bank/clientinfo';">
-        Client info
-    </button>
+    <div class="buttonClientInfo">
+        <button type="button" class="btn btn-outline-primary" onclick="location.href = 'bank/clientinfo';">Client info</button>
+    </div>
 </div>
+     <script src="clientinfo/clientAdd.js"></script>
 </@c.page>
