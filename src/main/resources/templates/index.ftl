@@ -6,5 +6,4 @@
         <button type="button" class="btn btn-outline-primary" onclick="location.href = 'bank/clientinfo';">Client info</button>
     </div>
 </div>
-     <script src="clientinfo/clientAdd.js"></script>
 </@c.page>

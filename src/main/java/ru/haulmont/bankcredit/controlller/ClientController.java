@@ -2,11 +2,9 @@ package ru.haulmont.bankcredit.controlller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.haulmont.bankcredit.DAO.ClientDAO;
+import ru.haulmont.bankcredit.entity.Client;
 
 
 @Controller
@@ -29,5 +27,10 @@ public class ClientController {
         System.out.println(id);
         model.addAttribute("clientId", clientDAO.getOneClient(id));
         return "clientinfo/clientindex";
+    }
+
+    @PostMapping("bank/clientinfo/addClient")
+    public void addClient(@RequestBody Client client) {
+        System.out.println(client);
     }
 }
