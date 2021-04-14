@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.haulmont.bankcredit.DAO.ClientDAO;
 import ru.haulmont.bankcredit.entity.Client;
 
-
 @Controller
 @RequestMapping("bank/clientinfo")
 public class ClientController {
@@ -29,8 +28,17 @@ public class ClientController {
         return "clientinfo/clientindex";
     }
 
-    @PostMapping("bank/clientinfo/addClient")
-    public void addClient(@RequestBody Client client) {
-        System.out.println(client);
+    @GetMapping("/addClient")
+    public String addClient(Model model) {
+        System.out.println("get");
+        model.addAttribute("newClient", new Client());
+        return "clientinfo/addClient";
+    }
+
+    @PostMapping("/addClient")
+    public String addClient(@RequestParam String surName) {
+        System.out.println(surName);
+        //clientDAO.saveClient(client);
+        return "redirect:/bank/clientinfo";
     }
 }

@@ -1,4 +1,5 @@
-<#import '../parts/common.ftl' as c>
+<#import "../parts/common.ftl" as c/>
+<#import "../parts/editClient.ftl" as edit/>
 <@c.page>
     <h1 class="display-6 text-center">Client info</h1>
 
@@ -16,7 +17,7 @@
         </label>
         <label>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn btn-outline-secondary" data-toggle="modal" data-target="#addClient">
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href = '/bank/clientinfo/addClient';">
             Add client
         </button>
         </label>
@@ -190,49 +191,5 @@
     <#else>
 <#--        No client-->
     </#if>
-                <!-- Modal -->
-                <div class="modal fade" id="addClient" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Add client</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form name="clientForm">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="surName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Sur name</span>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="firstName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">First name</span>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="lastName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Last name</span>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="number" name="passportNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Passport number</span>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="number" name="phoneNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Phone number</span>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-outline-success">Add client</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 </@c.page>

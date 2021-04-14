@@ -30,4 +30,9 @@ public class ClientDAO {
     public Client getOneClient(Long id) {
         return (Client) clients.stream().filter(client -> client.getId() == id).findAny().orElse(null);
     }
+
+    public void saveClient(Client client) {
+        client.setId(++ID_CLIENT);
+        clients.add(client);
+    }
 }
