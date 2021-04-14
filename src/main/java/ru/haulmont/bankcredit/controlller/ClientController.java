@@ -17,7 +17,7 @@ public class ClientController {
 
     @GetMapping
     public String getClients(Model model) {
-        model.addAttribute("clientList",clientDAO.listClients());
+        model.addAttribute("clientList", clientDAO.listClients());
         return "clientinfo/clientindex";
     }
 
@@ -30,15 +30,20 @@ public class ClientController {
 
     @GetMapping("/addClient")
     public String addClient(Model model) {
-        System.out.println("get");
         model.addAttribute("newClient", new Client());
         return "clientinfo/addClient";
     }
 
     @PostMapping("/addClient")
-    public String addClient(@RequestParam String surName) {
-        System.out.println(surName);
-        //clientDAO.saveClient(client);
+    public String addClient(@RequestParam String surName,
+                            @RequestParam String firstName,
+                            @RequestParam String lastName,
+                            @RequestParam Integer passportNumber,
+                            @RequestParam Long phoneNumber,
+                            @RequestParam String email
+                            ) {
+        Client client = new Client(surName, firstName, lastName, passportNumber, phoneNumber, email);
+        clientDAO.saveClient(client);
         return "redirect:/bank/clientinfo";
     }
 }

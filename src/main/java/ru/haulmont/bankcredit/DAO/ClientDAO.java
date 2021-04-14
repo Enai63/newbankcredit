@@ -14,13 +14,13 @@ public class ClientDAO {
 
         clients.add(new Client(++ID_CLIENT,"Petrov", "Anton", "Valentinovich",
                 4234213,
-                893242113, "Toha76@yandex.ru"));
+                893242113L, "Toha76@yandex.ru"));
         clients.add(new Client(++ID_CLIENT,"Ivanov", "Ivan", "Viktorovich",
                 43525,
-                893243534, "ivanov32@mail.ru"));
+                893243534L, "ivanov32@mail.ru"));
         clients.add(new Client(++ID_CLIENT,"Kiselev", "Denis", "Andreevich",
                 41232113,
-                823442113, "kisel42ya.ru"));
+                823442113L, "kisel42ya.ru"));
     }
 
     public List<Client> listClients() {

@@ -1,34 +1,76 @@
 <#macro clientEdit path>
-<form action="${path}" name="editClient" method="post">
-    <div class="input-group input-group-sm mb-3">
-        <input type="text" id="surName" name="surName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Sur name</span>
+<form class="row g-3 needs-validation" novalidate  action="${path}" name="editClient" method="post">
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Sur name</label>
+        <input type="text" name="surName" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
     </div>
-    <div class="input-group input-group-sm mb-3">
-        <input type="text" id="firstName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">First name</span>
-    </div><div class="input-group input-group-sm mb-3">
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Last name</span>
+
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text" name="firstName" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
     </div>
-    <div class="input-group input-group-sm mb-3">
-        <input type="number" id="passportNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Passport number</span>
+
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Last name</label>
+        <input type="text" name="lastName" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
     </div>
-    <div class="input-group input-group-sm mb-3">
-        <input type="number" id="phoneNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Phone number</span>
+
+    <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">Passport number</label>
+        <input type="number" name="passportNumber" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
     </div>
-    <div class="input-group input-group-sm mb-3">
-        <input type="email" id="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+
+    <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">Phone number</label>
+        <input type="number" name="phoneNumber" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
     </div>
-    <label>
-    <button type="submit" formmethod="post" class="btn btn-outline-success">Add client</button>
-    </label>
-    <label>
+
+    <div class="col-md-3">
+        <label for="validationCustom01" class="form-label">Email</label>
+        <input type="text" name="email" class="form-control" id="validationCustom01" required>
+        <div class="invalid-feedback">
+            Not empty
+        </div>
+    </div>
+
+    <div class="col-10">
+        <button type="submit" formmethod="post" class="btn btn-outline-success">Add client</button>
+    </div>
+    <div class="col-sm-5">
         <button type="reset" class="btn btn-outline-primary" onclick="location.href='/bank/clientinfo';">Return</button>
-    </label>
+    </div>
 </form>
+
+    <script>
+        (function () {
+            'use strict'
+            let forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 
 </#macro>

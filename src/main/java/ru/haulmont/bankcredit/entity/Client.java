@@ -19,7 +19,7 @@ public class Client {
     @Column(length = 15)
     private Integer passportNumber;
     @Column(length = 9)
-    private Integer phoneNumber;
+    private Long phoneNumber;
     @Column(length = 50, unique = true)
     private String email;
 
@@ -30,7 +30,7 @@ public class Client {
                   String firstName,
                   String lastName,
                   Integer passportNumber,
-                  Integer phoneNumber,
+                  Long phoneNumber,
                   String email) {
         this.surName = surName;
         this.firstName = firstName;
@@ -45,7 +45,7 @@ public class Client {
                   String firstName,
                   String lastName,
                   Integer passportNumber,
-                  Integer phoneNumber,
+                  Long phoneNumber,
                   String email) {
         this.id = id;
         this.surName = surName;
@@ -73,11 +73,11 @@ public class Client {
         this.passportNumber = passportNumber;
     }
 
-    public Integer getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -111,5 +111,17 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "surName='" + surName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", passportNumber=" + passportNumber +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
