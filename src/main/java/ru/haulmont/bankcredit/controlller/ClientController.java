@@ -28,17 +28,11 @@ public class ClientController {
         return "clientinfo/clientindex";
     }
 
-    @GetMapping("/addClient")
-    public String addClient(Model model) {
-        model.addAttribute("newClient", new Client());
-        return "clientinfo/addClient";
-    }
-
     @PostMapping("/addClient")
     public String addClient(@RequestParam String clientSurName,
                             @RequestParam String clientFirstName,
                             @RequestParam String clientLastName,
-                            @RequestParam Integer passportNumber,
+                            @RequestParam Long passportNumber,
                             @RequestParam Long phoneNumber,
                             @RequestParam String email
                             ) {

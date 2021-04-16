@@ -3,10 +3,11 @@
 <@c.page>
 <@navs.navs></@navs.navs>
     <h1 class="display-6 text-center">Client info</h1>
+<#--  FIND AS NAME   TODO-->
     <div class="findClientId">
         <form method="get" action="/bank/clientinfo/id">
             <div class="input-group mb-3">
-                <input type="number" name="id" class="form-control" placeholder="Entry id" aria-label="Entry id" aria-describedby="button-addon2">
+                <input type="number" name="id" class="form-control" placeholder="Entry id" aria-label="Entry id" aria-describedby="button-addon2">  TODO
                 <button class="btn btn-outline-secondary " type="submit" id="button-addon2">Entry id</button>
             </div>
         </form>
@@ -152,10 +153,10 @@
                                 ${clientId.lastName}
                             </td>
                             <td class="table-info text-left font-weight-light">
-                                ${clientId.passportNumber}
+                                ${clientId.passportNumber?string.computer}
                             </td>
                             <td class="table-info text-left font-weight-light">
-                                ${clientId.phoneNumber}
+                                ${clientId.phoneNumber?string.computer}
                             </td>
                             <td class="table-info text-left font-weight-light">
                                 ${clientId.email}
@@ -196,12 +197,12 @@
                 </p>
             </th>
             <th scope="col">
-                <p class="font-weight-normal text-center">
+                <p class="font-weight-normal text-center float-md-none">
                     Number passport client
                 </p>
             </th>
             <th scope="col">
-                <p class="font-weight-normal text-center">
+                <p class="font-weight-normal text-center float-md-none">
                     Phone number client
                 </p>
             </th>
@@ -232,11 +233,11 @@
                 <td class="table-info text-left font-weight-light">
                     ${client.lastName}
                 </td>
-                <td class="table-info text-left font-weight-light">
-                    ${client.passportNumber}
+                <td class="table-info text-left font-weight-light float-none">
+                    ${client.passportNumber?string.computer}
                 </td>
-                <td class="table-info text-left font-weight-light">
-                    ${client.phoneNumber}
+                <td class="table-info text-left font-weight-light float-none">
+                    ${client.phoneNumber?string.computer}
                 </td>
                 <td class="table-info text-left font-weight-light">
                     ${client.email}
@@ -245,12 +246,12 @@
                     <#--Control-->
                 </td>
             </tr>
-
             </tbody>
         </#list>
         </table>
 <#--        </div>-->
         </table>
+
     <#else>
 <#--        No client-->
     </#if>

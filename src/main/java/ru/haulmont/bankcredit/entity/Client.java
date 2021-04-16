@@ -16,9 +16,9 @@ public class Client {
     private String firstName;
     @Column(length = 50)
     private String lastName;
-    @Column(length = 15)
-    private Integer passportNumber;
-    @Column(length = 9)
+    @Column(length = 10)
+    private Long passportNumber;
+    @Column(length = 12)
     private Long phoneNumber;
     @Column(length = 50, unique = true)
     private String email;
@@ -29,7 +29,7 @@ public class Client {
     public Client(String surName,
                   String firstName,
                   String lastName,
-                  Integer passportNumber,
+                  Long passportNumber,
                   Long phoneNumber,
                   String email) {
         this.surName = surName;
@@ -44,7 +44,7 @@ public class Client {
                   String surName,
                   String firstName,
                   String lastName,
-                  Integer passportNumber,
+                  Long passportNumber,
                   Long phoneNumber,
                   String email) {
         this.id = id;
@@ -65,11 +65,11 @@ public class Client {
         this.surName = surName;
     }
 
-    public Integer getPassportNumber() {
+    public Long getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(Integer passportNumber) {
+    public void setPassportNumber(Long passportNumber) {
         this.passportNumber = passportNumber;
     }
 
