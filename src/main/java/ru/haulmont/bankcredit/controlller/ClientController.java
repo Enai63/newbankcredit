@@ -35,14 +35,14 @@ public class ClientController {
     }
 
     @PostMapping("/addClient")
-    public String addClient(@RequestParam String surName,
-                            @RequestParam String firstName,
-                            @RequestParam String lastName,
+    public String addClient(@RequestParam String clientSurName,
+                            @RequestParam String clientFirstName,
+                            @RequestParam String clientLastName,
                             @RequestParam Integer passportNumber,
                             @RequestParam Long phoneNumber,
                             @RequestParam String email
                             ) {
-        Client client = new Client(surName, firstName, lastName, passportNumber, phoneNumber, email);
+        Client client = new Client(clientSurName, clientFirstName, clientLastName, passportNumber, phoneNumber, email);
         clientDAO.saveClient(client);
         return "redirect:/bank/clientinfo";
     }

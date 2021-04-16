@@ -1,9 +1,9 @@
 <#import "parts/common.ftl" as c>
- <@c.page>
+<#import "parts/navs.ftl" as navs>
+<@c.page>
 <div class="main">
+    <@navs.navs></@navs.navs>
     <h2>Welcome to bank</h2>
-    <div class="buttonClientInfo">
-        <button type="button" class="btn btn-outline-primary" onclick="location.href = 'bank/clientinfo';">Client info</button>
-    </div>
+
 </div>
 </@c.page>
