@@ -176,12 +176,10 @@
                         <button type="button" class="btn btn-warning">Edit</button>
                         </div>
                         <div class="deleteClient">
-                            <form method="post" action="/bank/clientinfo/id">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" id="id" name="id" value="${client.id}">
+                            <form method="post" name="deleteClient" action="/bank/clientinfo/delete/id">
+                                <input type="hidden" name="id" value="${client.id}">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-
                         </div>
                     </div>
                 </td>

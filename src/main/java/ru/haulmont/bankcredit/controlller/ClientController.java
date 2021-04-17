@@ -1,5 +1,6 @@
 package ru.haulmont.bankcredit.controlller;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +23,8 @@ public class ClientController {
     }
 
     @GetMapping("/id")
-    public String getClient(@RequestParam("id") Long id, Model model) {
-        System.out.println(id);
+    public String getClient(@RequestParam Long id, Model model) {
+        System.out.println("Get mapping" + " " + id);
         model.addAttribute("clientId", clientDAO.getOneClient(id));
         return "clientinfo/clientindex";
     }
@@ -41,4 +42,9 @@ public class ClientController {
         return "redirect:/bank/clientinfo";
     }
 
+    @PostMapping("/delete/id")
+    public String deleteClient(@RequestParam Long id, Model model) {
+       clientDAO.deleteClient(id);
+        return "redirect:/bank/clientinfo";
+    }
 }

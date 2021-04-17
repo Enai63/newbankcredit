@@ -11,7 +11,6 @@ public class ClientDAO {
     {
         clients = new ArrayList<>();
 
-
         clients.add(new Client(++ID_CLIENT,"Petrov", "Anton", "Valentinovich",
                 1234567890L,
                 89276955528L, "Toha76@yandex.ru"));
@@ -34,5 +33,10 @@ public class ClientDAO {
     public void saveClient(Client client) {
         client.setId(++ID_CLIENT);
         clients.add(client);
+    }
+
+    public void deleteClient(Long id) {
+       Client clientFind = clients.stream().filter(client -> client.getId() == id).findAny().orElse(null);
+       clients.remove(clientFind);
     }
 }
