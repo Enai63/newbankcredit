@@ -90,7 +90,7 @@
                                 ${clientId.email}
                             </td>
                             <td class="table-info text-right">
-                                <#--Control-->
+                                control
                             </td>
                         </tr>
                         </tbody>
@@ -171,7 +171,19 @@
                     ${client.email}
                 </td>
                 <td class="table-info text-right">
-                    <#--Control-->
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <div class="editClient">
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        </div>
+                        <div class="deleteClient">
+                            <form method="post" action="/bank/clientinfo/id">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" id="id" name="id" value="${client.id}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+
+                        </div>
+                    </div>
                 </td>
             </tr>
             </tbody>

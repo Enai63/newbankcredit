@@ -40,4 +40,5 @@ public class ClientController {
         clientDAO.saveClient(client);
         return "redirect:/bank/clientinfo";
     }
+
 }

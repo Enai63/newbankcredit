@@ -16,7 +16,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-<#--                    "/bank/clientinfo/addClient"-->
                     <form class="row g-3 needs-validation" action="${path}" method="post" novalidate>
                         <div class="col-md-4">
                             <label for="validationCustom0 clientSurName" class="col-form-label">Sur name:</label>
@@ -25,7 +24,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="col-md-4">
                             <label for="validationCustom0 clientFirstName" class="col-form-label">First name:</label>
                             <input type="text" class="form-control" name="clientFirstName" id="validationCustom0 clientFirstName" required>
@@ -33,7 +31,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="col-md-4">
                             <label for="validationCustom0 clientLastName" class="col-form-label">Last name:</label>
                             <input type="text" class="form-control" name="clientLastName" id="validationCustom0 clientLastName" required>
@@ -41,7 +38,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="col-md-5">
                             <label for="validationCustom0 passportNumber" class="col-form-label">Passport number:</label>
                             <input type="number" class="form-control" name="passportNumber" id="validationCustom0 passportNumber" required>
@@ -49,7 +45,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="col-md-5">
                             <label for="validationCustom0 phoneNumber" class="col-form-label">Phone number:</label>
                             <input type="number" class="form-control" name="phoneNumber" id="validationCustom0 phoneNumber" required>
@@ -57,7 +52,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <label for="validationCustom0 email" class="col-form-label">Email:</label>
                             <input type="text" class="form-control" name="email" id="validationCustom0 email" required>
@@ -65,7 +59,6 @@
                                 Not empty
                             </div>
                         </div>
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-outline-success">Add</button>
