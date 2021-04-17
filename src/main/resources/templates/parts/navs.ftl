@@ -1,4 +1,5 @@
 <#macro navs>
+    <div class="navsMenu">
     <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Main page</a>
@@ -13,4 +14,5 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Credit</a>
         </li>
     </ul>
+    </div>
 </#macro>

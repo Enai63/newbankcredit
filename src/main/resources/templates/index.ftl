@@ -3,7 +3,7 @@
 <@c.page>
 <div class="main">
     <@navs.navs></@navs.navs>
-    <h2>Welcome to bank</h2>
+    <h2 class="display-6 text-center">Welcome to bank</h2>
 
 </div>
 </@c.page>
